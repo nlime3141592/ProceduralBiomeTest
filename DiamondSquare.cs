@@ -174,7 +174,7 @@ namespace nl
             return randStdNormal;
         }
 
-        public string Save()
+        public string Save(string path)
         {
             DateTime time = DateTime.Now;
             int YYYY = time.Year;
@@ -184,8 +184,8 @@ namespace nl
             int mm = time.Minute;
             int ss = time.Second;
 
-            string dateString = string.Format("{0}-{1:D02}-{2:D02}-{3:D02}-{4:D02}-{5:D02}", YYYY, MM, DD, hh, mm, ss);
-            string path = $@"C:\Test\{dateString}.png";
+            // string dateString = string.Format("{0}-{1:D02}-{2:D02}-{3:D02}-{4:D02}-{5:D02}", YYYY, MM, DD, hh, mm, ss);
+            // string path = $@"C:\Test\{dateString}.png";
 
             PngBuilder builder = PngBuilder.Create(_size, _size, false);
 
