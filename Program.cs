@@ -9,7 +9,8 @@ namespace nl
         private static void Main(string[] args)
         {
             // Main_DiamondSquare(args);
-            Main_CubicConvolution(args);
+            // Main_CubicConvolution(args);
+            Main_Materialization(args);
         }
 
         private static void Main_DiamondSquare(string[] args)
@@ -61,6 +62,19 @@ namespace nl
             fs = new FileStream("C:\\Test\\2025-12-12-20-50-59 (2).png", FileMode.Create);
             builder.Save(fs);
             fs.Close();
+        }
+
+        private static void Main_Materialization(string[] args)
+        {
+            string pathOut = "C:\\Test\\tile-test-1 (1-1).png";
+            string pathSrc = "C:\\Test\\tile-test-1.png";
+            string pathNzs = "C:\\Test\\2025-12-12-20-50-59 (1).png";
+
+            Materialization.Synthesize(
+                pathOut, pathSrc, pathNzs,
+                0.2f, 1.0f,
+                255.0f, 255.0f, 255.0f
+            );
         }
     }
 }
